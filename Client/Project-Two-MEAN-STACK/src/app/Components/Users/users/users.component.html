@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <div>
+            <h3>Users List</h3>
+        </div>
+        <div>
+        Search: <input type="text">
+        </div>
+        <div>
+        <input type="button" value="Add">
+        </div>
+        <div>
+            <app-user *ngFor="let u of users"  [user]="u"></app-user>
+        </div>
+    </body>
+</html>
