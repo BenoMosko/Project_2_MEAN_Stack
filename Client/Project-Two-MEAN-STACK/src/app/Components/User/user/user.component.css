@@ -1,4 +1,67 @@
-div
+#userDiv
+{    
+    margin-left: 50px;
+    width: 400px;    
+    border: 2px solid;
+}
+
+#otherData
 {
-	
+    margin-left: 25px;
+    width: 350px;   
+    border: 2px solid gray;
+    border-radius: 20px;
+    background-color: lightgrey;
+}
+
+#tasks
+{
+    position: absolute;
+    width: 300px;
+    margin-left: 50px;
+    margin-top: -40px;
+}
+
+#posts
+{
+    position: absolute;
+    width: 300px;
+    margin-left: 50px;
+    margin-top: -50px;    
+}
+
+#tasksGen
+{
+    position: absolute;
+    width: 400px;
+    height: 120px;
+    border: 2px solid black;
+    margin-left: 550px;
+    margin-top: -180px;
+}
+
+#postsGen
+{
+    position: absolute;
+    width: 400px;
+    height: 120px;
+    border: 2px solid black;
+    margin-left: 550px;
+    margin-top: 100px;
+}
+
+ul
+{
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: auto;    
+}
+li
+{
+    
+    align-items: center;
+    list-style-type: none;
+    border: 2px solid purple;
+    margin-bottom: 5px;
 }

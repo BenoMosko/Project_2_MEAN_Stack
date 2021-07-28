@@ -1,18 +1,66 @@
 <html>
     <body>
-        <div>
-            <form #f="ngForm">
-                ID: {{user._id}}
+        <div id="userDiv" [style.borderColor]="tasksCompleted? 'green' : 'red'" [style.backgroundColor]="idClick? 'orange' : 'white'">
+                <label for="userDiv; Tasks; Posts" (click)="idClick=!idClick">ID: {{user._id}}</label>
                 <br>
                 Name: <input type="text" name="Name" [(ngModel)]="user.Name">
                 <br>
                 Email: <input type="text" name="Email" [(ngModel)]="user.Email">
                 <br>
-                <input type="button" value="Other Data">
+                <input type="button" value="Other Data" (mouseover)="otherDataBoolean=true" (click)="otherDataBoolean=false">
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                <input type="button" value="Update" (click)="updateUser()">
+                <input type="button" value="Delete" (click)="deleteUser()">
                 <br>
-                <input type="button" value="Update">
-            </form>
-            <input type="button" value="Delete">
+                <div id="otherData" *ngIf="otherDataBoolean">
+                <br>
+                    City: <input type="text" name="City" [(ngModel)]="user.City">
+                    <br>
+                    Street: <input type="text" name="Street" [(ngModel)]="user.Street">
+                    <br>
+                    Zipcode: <input type="text" name="Zipcode" [(ngModel)]="user.Zipcode">
+                </div>
+        </div>
+
+        <div id="tasksGen" *ngIf="idClick">
+        <div id="tasks" *ngIf="idClick">
+            Tasks for: {{user.Name}}
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            <input type="button" value="Add Task">
+            <ul>
+                <li *ngFor="let tasks of user.Tasks">
+                    Title: {{tasks.Title}}
+                    <br>
+                    Completed: {{tasks.Completed}}
+                </li>  
+            </ul>
+        </div>
+        </div>
+
+        <div id="postsGen" *ngIf="idClick">
+        <div id="posts" *ngIf="idClick">
+            Posts of: {{user.Name}}
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            <input type="button" value="Add Post">
+            <br>
+            <ul>
+                <li *ngFor="let post of user.Posts">
+                    <br>
+                    Title: {{post.Title}} <br>
+                    Body: {{post.Body}}
+                </li>     
+            </ul>    
+        </div>
         </div>
     </body>
 </html>
