@@ -40,8 +40,8 @@ const getUser = (id) =>
 }
 
 
-//Add Users
-const addUsers = (obj) =>
+//Add User
+const addUser = (obj) =>
 {
     return new Promise((resolve, reject) =>
     {
@@ -50,6 +50,7 @@ const addUsers = (obj) =>
             Email : obj.Email,
             City : obj.City,
             Street : obj.Street,
+            Zipcode : obj.Zipcode,
             Tasks : obj.Tasks,
             Posts : obj.Posts
         });
@@ -70,7 +71,7 @@ const addUsers = (obj) =>
 
 
 //Update Users
-const updateUsers = (id, obj) =>
+const updateUser = (id, obj) =>
 {
     return new Promise((resolve, reject) =>
     {
@@ -79,6 +80,7 @@ const updateUsers = (id, obj) =>
             Email : obj.Email,
             City : obj.City,
             Street : obj.Street,
+            Zipcode : obj.Zipcode,
             Tasks : obj.Tasks,
             Posts : obj.Posts
         }, function(error)
@@ -97,7 +99,7 @@ const updateUsers = (id, obj) =>
 
 
 //Delete Users
-const deleteUsers = (id) =>
+const deleteUser = (id) =>
 {
     return new Promise((resolve, reject) =>
     {
@@ -116,4 +118,4 @@ const deleteUsers = (id) =>
 }
 
 
-module.exports = {getUsers, getUsers, addUsers, updateUsers, deleteUsers};
+module.exports = {getUsers, getUser, addUser, updateUser, deleteUser};
