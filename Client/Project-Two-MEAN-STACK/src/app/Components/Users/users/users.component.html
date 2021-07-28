@@ -1,16 +1,10 @@
 <html>
     <body>
-        <div>
+        <div class="users">
             <h3>Users List</h3>
-        </div>
-        <div>
-        Search: <input type="text">
-        </div>
-        <div>
+        Search: <input type="text" #searchPhrase (keyup)="search(searchPhrase.value)">
         <input type="button" value="Add">
-        </div>
-        <div>
-            <app-user *ngFor="let u of users"  [user]="u"></app-user>
+            <app-user *ngFor="let u of filteredUsers"  [user]="u"></app-user>
         </div>
     </body>
 </html>
