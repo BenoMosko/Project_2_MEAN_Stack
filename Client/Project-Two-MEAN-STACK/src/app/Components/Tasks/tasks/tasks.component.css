@@ -1,4 +1,14 @@
-#name
+#task
 {
-    
+    position: absolute;
+    width: 300px;
+    margin-left: 50px;
+    margin-top: -40px;
+    font-size: 18px;
+    border: 2px solid black;  
+}
+
+#hiddenId
+{
+    visibility: hidden;
 }

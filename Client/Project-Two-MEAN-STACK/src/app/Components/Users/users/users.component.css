@@ -4,3 +4,12 @@
     border: 2px solid gray;
     border-radius: 40px;
 }
+
+#addUser
+{
+    position: absolute;
+    width: 250px;
+    margin-left: 600px;
+    margin-top: 23px;  
+    border: 2px solid black;   
+}

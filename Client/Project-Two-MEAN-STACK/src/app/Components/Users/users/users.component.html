@@ -1,9 +1,19 @@
 <html>
     <body>
+        <div id="addUser" *ngIf="isVisible">
+            <form #f="ngForm" (ngSubmit)="create()">
+                Name: <input type="text" name="Name" [(ngModel)]="userData.Name">
+                <br>
+                Email: <input type="text" name="Email" [(ngModel)]="userData.Email" >
+                <br>
+                <input type="button" value="Cancel" (click)="reload()">        
+                <input type="submit" value="Add"><br><br>
+                </form>
+        </div>
         <div class="users">
             <h3>Users List</h3>
         Search: <input type="text" #searchPhrase (keyup)="search(searchPhrase.value)">
-        <input type="button" value="Add">
+        <input type="button" value="Add" (click)="isVisible =!isVisible">
             <app-user *ngFor="let u of filteredUsers"  [user]="u"></app-user>
         </div>
     </body>

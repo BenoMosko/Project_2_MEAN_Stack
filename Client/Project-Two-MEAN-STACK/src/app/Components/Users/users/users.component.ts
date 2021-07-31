@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { User } from 'src/app/Classes/User/user';
-import { Service1Service } from 'src/app/Services/Service1/service1.service';
 
 @Component({
   selector: 'app-users',
@@ -11,11 +10,14 @@ import { Service1Service } from 'src/app/Services/Service1/service1.service';
 })
 export class UsersComponent implements OnInit {
 
-  constructor(private http : HttpClient, private service : Service1Service) { }
+  constructor(private http : HttpClient) { }
 
   sub : Subscription = new Subscription();
+  sub2 : Subscription = new Subscription();
   users : User[] = [];
   filteredUsers: User[] = [];
+  isVisible: boolean = false;
+  userData: User = new User();
 
   ngOnInit(): void {
     this.http.get<User[]>("http://localhost:8000/api/Users").subscribe(data =>
@@ -36,6 +38,20 @@ export class UsersComponent implements OnInit {
       this.filteredUsers = this.users.filter(x => x.Name.toLowerCase().includes(text.toLowerCase()))  
     }
     
+  }
+
+  create()
+  {
+    this.sub2 = this.http.post("http://localhost:8000/api/Users", this.userData).subscribe(status =>
+    {
+      alert(status);
+      window.location.reload();
+    })
+  }
+
+  reload()
+  {
+    window.location.reload();
   }
 
 }

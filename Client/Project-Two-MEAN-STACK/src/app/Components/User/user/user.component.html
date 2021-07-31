@@ -34,14 +34,23 @@
             &nbsp;
             &nbsp;
             &nbsp;
-            <input type="button" value="Add Task">
-            <ul>
-                <li *ngFor="let tasks of user.Tasks">
-                    Title: {{tasks.Title}}
-                    <br>
-                    Completed: {{tasks.Completed}}
-                </li>  
-            </ul>
+            <input type="button" value="Add Task" (click)="addTodos=!addTodos">
+            <div id="hiddenTask" [style.visibility]="addTodos? 'hidden' : 'visible'">
+                <ul>
+                    <li *ngFor="let tasks of user.Tasks">
+                        <input id="hiddenId"  type="text" name="taskId" #tasktxt [(ngModel)]="tasks._id">
+                        <br>
+                        Title: {{tasks.Title}}
+                        <br>
+                        Completed: {{tasks.Completed}}
+                        &nbsp;
+                        &nbsp;
+                        <input *ngIf = "!tasks.completed"   type="button" value="Mark completed" (click)=  "markCompleted(tasktxt.value)">
+                    </li>  
+                </ul>
+            </div>
+            <br>
+            <app-tasks [style.visibility]="addTodos? 'visible' : 'hidden'" [userTask]="user"></app-tasks>
         </div>
         </div>
 
@@ -51,15 +60,18 @@
             &nbsp;
             &nbsp;
             &nbsp;
-            <input type="button" value="Add Post">
+            <input type="button" value="Add Post" (click)="addPosts=!addPosts">
             <br>
+        <div id="hiddenPost" [style.visibility]="addPosts? 'hidden' : 'visible'">
             <ul>
                 <li *ngFor="let post of user.Posts">
                     <br>
                     Title: {{post.Title}} <br>
                     Body: {{post.Body}}
                 </li>     
-            </ul>    
+            </ul>
+            <app-posts [style.visibility]="addPosts? 'visible' : 'hidden'" [userPost]="user"></app-posts> 
+        </div>    
         </div>
         </div>
     </body>

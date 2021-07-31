@@ -21,6 +21,8 @@ export class UserComponent implements OnInit {
   tasksCompleted : Boolean = false;
   otherDataBoolean : Boolean = false;
   idClick : Boolean = false;
+  addTodos: boolean = false;
+  addPosts: boolean = false;
 
   ngOnInit(): void {
     this.user.Tasks.forEach((task) =>{
@@ -52,6 +54,12 @@ export class UserComponent implements OnInit {
       alert(status);
       window.location.reload();
     });
+  }
+
+  markCompleted(id: String) {  
+    let taskId = this.user.Tasks.find(x => x._id == id);
+    taskId.Completed = true.toString();
+    this.updateUser();
   }
 
 }

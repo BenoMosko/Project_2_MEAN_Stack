@@ -1,1 +1,13 @@
-<p>tasks works!</p>
+<html>
+    <body>
+        <div id="task">
+            <form #f="ngForm" (ngSubmit)="update(txtTitle.value)">
+                New Task: <input type="text" #txtTitle>
+                <br>
+                <input type="button" value="Cancel" (click)="reload()">
+                <br>
+                <input type="submit" value="Add Task">
+            </form>
+        </div>
+    </body>
+</html>

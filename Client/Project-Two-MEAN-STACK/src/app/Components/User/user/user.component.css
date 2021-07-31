@@ -50,6 +50,11 @@
     margin-top: 100px;
 }
 
+#hiddenId 
+{
+    visibility: hidden;
+}
+
 ul
 {
     padding-top: 20px;
