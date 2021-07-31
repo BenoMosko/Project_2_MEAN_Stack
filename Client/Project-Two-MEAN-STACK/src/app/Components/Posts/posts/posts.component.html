@@ -1,1 +1,14 @@
-<p>posts works!</p>
+<html>
+    <body>
+        <div id="post">
+            <form #f="ngForm" (ngSubmit)="update(txtTitle.value, txtBody.value)">
+                New Post Title: <input type="text" #txtTitle>
+                <br>
+                New Post Body: <input type="text" #txtBody>
+                <br>
+                <input type="button" value="Cancel" (click)="reload()">
+                <input type="submit" value="Add Post">
+            </form>
+        </div>
+    </body>
+</html>

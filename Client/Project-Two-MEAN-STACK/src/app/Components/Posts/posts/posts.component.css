@@ -1,4 +1,11 @@
-#name
+#post
 {
-    
+    position: absolute;
+    width: 300px;
+    margin-left: 50px;
+    margin-top: -50px;  
+    font-size: 18px;
+    padding-left: 20px;
+    padding-top: 20px;
+    border: 2px solid black;   
 }
