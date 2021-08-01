@@ -55,10 +55,17 @@ export class UserComponent implements OnInit {
     });
   }
 
-  markCompleted(id: String) {  
+  markCompleted(id: String)
+  {  
     let taskId = this.user.Tasks.find(x => x._id == id);
     taskId.Completed = true.toString();
     this.updateUser();
+  }
+
+  ngOnDestroy()
+  {
+    this.sub.unsubscribe();
+    this.sub1.unsubscribe();
   }
 
 }
