@@ -5,6 +5,6 @@ export class User {
     City : String = ""
     Street : String = ""
     Zipcode : Number = 0
-    Tasks : any[] = []
-    Posts : any[] = []
+    Tasks : [] = []
+    Posts : [] = []
 }
