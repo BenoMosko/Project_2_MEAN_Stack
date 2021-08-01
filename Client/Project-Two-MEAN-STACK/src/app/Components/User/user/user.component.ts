@@ -39,8 +39,7 @@ export class UserComponent implements OnInit {
 
   updateUser()
   {
-    this.sub = this.http
-      .put('http://localhost:8000/api/Users/' + this.user._id, this.user).subscribe((status) =>
+    this.sub = this.http.put('http://localhost:8000/api/Users/' + this.user._id, this.user).subscribe((status) =>
       {
         alert(status);
         window.location.reload();
