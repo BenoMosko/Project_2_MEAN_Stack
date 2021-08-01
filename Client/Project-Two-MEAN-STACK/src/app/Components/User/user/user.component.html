@@ -42,6 +42,7 @@
                         <br>
                         Title: {{tasks.Title}}
                         <br>
+                        <br>
                         Completed: {{tasks.Completed}}
                         &nbsp;
                         &nbsp;
@@ -61,12 +62,13 @@
             &nbsp;
             &nbsp;
             <input type="button" value="Add Post" (click)="addPosts=!addPosts">
-            <br>
         <div id="hiddenPost" [style.visibility]="addPosts? 'hidden' : 'visible'">
             <ul>
                 <li *ngFor="let post of user.Posts">
                     <br>
-                    Title: {{post.Title}} <br>
+                    Title: {{post.Title}}
+                    <br>
+                    <br>
                     Body: {{post.Body}}
                 </li>     
             </ul>
