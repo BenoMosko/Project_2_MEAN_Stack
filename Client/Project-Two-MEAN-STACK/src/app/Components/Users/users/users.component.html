@@ -12,8 +12,8 @@
         </div>
         <div class="users">
             <h3>Users List</h3>
-        Search: <input type="text" #searchPhrase (keyup)="search(searchPhrase.value)">
-        <input type="button" value="Add" (click)="isVisible =!isVisible">
+            Search: <input type="text" #searchPhrase (keyup)="search(searchPhrase.value)">
+            <input type="button" value="Add" (click)="isVisible =!isVisible">
             <app-user *ngFor="let u of filteredUsers"  [user]="u"></app-user>
         </div>
     </body>
