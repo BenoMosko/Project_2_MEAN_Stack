@@ -25,7 +25,8 @@ export class UserComponent implements OnInit {
   addPosts: boolean = false;
 
   ngOnInit(): void {
-    this.user.Tasks.forEach((task) =>{
+    this.user.Tasks.forEach((task) =>
+    {
       if(task.Completed)
       {
         this.tasksCompleted = true;
@@ -34,7 +35,7 @@ export class UserComponent implements OnInit {
       {
         this.tasksCompleted = false;
       }
-    })
+    });
   }
 
   updateUser()
