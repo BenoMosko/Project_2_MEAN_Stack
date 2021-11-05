@@ -1,4 +1,4 @@
-# Project_2_MEAN_Stack_Project
+# Project_2_MEAN_Stack
 Mongo DB Atlas Cloud, Angular Users Management App - Technion Project 2
 
 A simple Angular app for users managmement.
